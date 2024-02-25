@@ -1,0 +1,252 @@
+/* Reset Default Browser Sryles */
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+ol, ul {
+    list-style: none;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    background: url("backgroung.jpg");
+    background-attachment: fixed;
+}
+/* стиль для оберточного блока*/
+#wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    /*border: 1px solid black;*/
+}
+header, nav, main, aside, footer {
+    margin: 8px 0;
+    background: white;
+}
+.container {
+    display: flex;
+}
+aside {
+    margin: 0;
+    flex-basis: 300px;
+    flex-shrink: 0; /*фактор сжатия, как именно будут заполнять контейнер*/
+}
+main {
+    margin: 0 8px 0 0 ;
+}
+main, aside {
+    padding: 16px;
+}
+header {
+    height: 300px;
+    background: url("header.jpg");
+    background-size: cover;
+}
+header h1 {
+    size: 24px;
+    text-align: center;
+    position: relative;
+    top: 45%;
+    color: rgb(255, 255, 255);
+    line-height: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 3px 2px rgb(0, 0, 0);
+    font-size: 72px;
+}
+/*Navigation*/
+.nav-container {
+    background: rgb(140, 109, 160);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.nav-container .burger-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    display: none;
+}
+.nav-container .burger-btn span {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    left: 5px;
+    top: 19px;
+    transition: transform .5s, opacity .5s;
+}
+.nav-container .burger-btn span:nth-child(1) {
+    transform: translateY(-10px);
+}
+.nav-container .burger-btn span:nth-child(3) {
+    transform: translateY(+10px);
+}
+.nav-container.open .burger-btn span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+}
+.nav-container.open .burger-btn span:nth-child(2) {
+    opacity: 0;
+}
+.nav-container.open .burger-btn span:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+}
+.nav-container .logo {
+    display: block;
+}
+.nav-container .logo img {
+    display: block;
+    width: 60px;
+    height: 40px;
+}
+nav {
+    background: rgb(140, 109, 160);
+    margin: 0;
+    transition: transform .5s ease-in-out;
+}
+nav ul.nav-list {
+    display: flex;
+    padding-left: 0;
+    justify-content: center;
+}
+nav ul.nav-list a {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 16px 20px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+nav ul.nav-list a:hover {
+    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    background: rgb(205, 194, 232);
+}
+/* Main */
+main section {
+    margin-bottom: 16px;
+}
+.container section h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(140, 109, 160);
+    border-bottom: 2px solid rgb(140, 109, 160);
+    margin-bottom: 8px;
+}
+section.weekly .weekly-articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.weekly-articles article {
+    width: 50%;
+    width: calc(50% - 8px);
+}
+.weekly-articles article a {
+    display: block;
+    text-decoration: none;
+    border: 1px solid rgb(203, 193, 255);
+    transition: all .2s ease-in-out;
+}
+.weekly-articles article img {
+    object-fit: cover;
+    height: 90%;
+    width: 100%;
+}
+.weekly-articles article time {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: rgb(68, 68, 68);
+    margin: 0 8px;
+}
+.weekly-articles article h3, .weekly-articles article p {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 8px;
+    color: rgb(43, 0, 83);
+}
+.weekly-articles article p {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+}
+.weekly-articles a:hover {
+    border-color: rgb(93, 25, 130);
+    box-shadow: 3px 3px 10px rgb(93, 25, 130);
+
+}
+/*Aside для блока*/
+aside .category-list li {
+    margin: 4px;
+    border-bottom: 1px dashed rgb(164, 171, 255);
+    padding-left: 4px;
+}
+aside .category-list li a{
+    display: inline-block;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgb(43, 0, 83);
+    font-weight: 600;
+}
+aside .category-list li a:hover{
+    color: blueviolet;
+}
+/* Для Footer*/
+footer {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 32px;
+    padding: 9px;
+    color: rgb(131, 131, 131);
+    font-size: 12px;
+}
+/*Описание для печати*/
+/* 
+@media print {
+    body {
+        background: white;
+    }
+    #wrapper header {
+        display: none;
+    }
+    #wrapper nav {
+        display: none;
+    }
+    #wrapper aside {
+        display: none;
+    }
+} 
+*/
+
+@media (max-width: 700px) {
+    .nav-container .burger-btn {
+        display: block;
+    }
+    nav {
+        position: absolute;
+        left: 8px;
+        top: 48px;
+        width: calc(100% - 14px);
+        z-index: 5;
+        left: calc(-100% - 16px);
+    }
+    nav ul.nav-list {
+        display: block;
+    }
+    .nav-container.open nav {
+        transform: translate(calc(100% + 32px + 8px));
+    }
+}
